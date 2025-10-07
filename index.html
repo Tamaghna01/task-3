@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Styling & JavaScript Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="text-center mb-12 py-6 bg-white rounded-xl shadow-md">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-800">Responsive Web Project</h1>
+            <p class="text-lg text-gray-600 mt-2">Interactive Carousel and API Fetch.</p>
+        </header>
+
+        <main class="main-grid grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <section id="carousel-section" class="card bg-white p-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Interactive Image Carousel</h2>
+                <div class="relative w-full overflow-hidden rounded-lg">
+                    <img id="carousel-img" class="carousel-image" src="https://placehold.co/800x300/1e40af/ffffff?text=Image+1+%7C+Code+Editor" alt="Carousel Image">
+                    <div id="dots-container" class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                        </div>
+                </div>
+
+                <div class="flex justify-between mt-4 space-x-3">
+                    <button onclick="prevImage()" class="w-full py-2 px-4 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300 transition duration-150">Previous</button>
+                    <button onclick="nextImage()" class="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg btn-primary hover:bg-blue-600 transition duration-150">Next</button>
+                </div>
+            </section>
+
+            <section id="api-section" class="card bg-white p-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">API Fetch: Random Joke</h2>
+
+                <div class="bg-green-50 p-6 rounded-xl border border-green-200 h-64 flex flex-col justify-between">
+                    <p id="joke-setup" class="text-xl font-medium text-gray-700 italic mb-4">
+                        Click the button to fetch a random joke!
+                    </p>
+                    <p id="joke-punchline" class="text-2xl font-extrabold text-green-700 hidden">
+                        </p>
+                    <div id="joke-loader" class="hidden justify-center items-center h-full">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+
+                <button onclick="fetchJoke()" id="fetch-joke-btn" class="w-full mt-4 py-3 px-6 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition duration-150 flex items-center justify-center space-x-2">
+                    <span>Get New Joke!</span>
+                </button>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
